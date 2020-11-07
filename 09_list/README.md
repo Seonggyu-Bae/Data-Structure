@@ -24,7 +24,7 @@
 
 **리스트 생성**
 
-``sh
+```sh
 LLIST* create_list() {
 	LLIST* list;
 	list = (LLIST*)malloc(sizeof(LLIST));
@@ -39,10 +39,11 @@ LLIST* create_list() {
 		return NULL;
 	}
 }
-``
+```
 
 **원하는 곳에 데이터 삽입**
-``sh
+```sh
+
 bool
 add_node_at (
 	LLIST*		 list,
@@ -94,4 +95,4 @@ add_node_at (
 		return true;
 	}
 }
-``
+```
