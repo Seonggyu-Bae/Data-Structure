@@ -34,7 +34,7 @@ STACK* create_stack(){
 }
 ```
 
-# STACK NODE을 STACK으로 넣기
+# STACK NODE를 STACK으로 넣기
 ```sh
 int push(STACK* stack, void* in){
 	printf("Pushing a data into stack...\n");
@@ -49,4 +49,19 @@ int push(STACK* stack, void* in){
 	
 	return 1;
 }	
+```
+
+# STACK NODE를 STACK에서 빼기
+```sh
+void* pop(STACK* stack) {
+	if(stack->count==0)
+		return 0;
+	else{
+		STACK_NODE*temp = stack->top;
+		void* data_out = stack->top->data_ptr;
+		stack->top = stack->top->link;
+		free(temp);
+		(stack->count)--;
+		return data_out;
+}
 ```
