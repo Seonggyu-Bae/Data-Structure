@@ -96,3 +96,59 @@ add_node_at (
 	}
 }
 ```
+
+**원하는 곳의 데이터 삭제**
+
+```sh
+bool
+del_node_at (
+	LLIST* list,
+	unsigned int index
+) {
+	if(list->count==0)
+		return false;
+	else if(index>= list->count)
+		return false;
+
+	if(list->count==1){
+		free(list->front);
+		list->front = NULL;
+		list->rear  = NULL;
+		list->count = 0;
+		return true;
+	}
+
+	int iter_i=0;
+	list->pos = list->front;
+	NODE*pre  = NULL;
+	while(iter_i != index){
+		pre = list->pos;
+		list->pos = list->pos->next;
+		iter_i++;
+	}
+	
+	if(index==0){
+		list->front = list->pos->next;
+		free(list->pos);
+		list->pos=NULL;
+		(list->count)--;
+		return true;
+	}	
+
+	if(index == (list->count-1)){
+		list->rear = pre;
+		pre->next  = NULL;
+		free(list->pos);
+		list->pos  = NULL;
+		(list->count)--;
+		return true;
+	}
+
+	else{
+		pre->next = list->pos->next;
+		free(list->pos);
+		list->pos = NULL;
+		(list->count)--;
+		return true;
+	}
+```
