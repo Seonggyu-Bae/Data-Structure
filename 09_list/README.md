@@ -8,8 +8,14 @@
 # Insertion
 ![architecture](https://postfiles.pstatic.net/MjAyMDExMDdfNzIg/MDAxNjA0NzIwMTQxMzk0.2225DQAhj6jvLb6VetryaUUoxYAzYvANvhaVY-syilMg.-oKlUzj5e7cZbgMm7DTys2ymntEeqFCkE0ftRwvt6Rkg.PNG.qotjdrb6/image.png?type=w773)
 
+**원하는 곳에 데이터 삽입가능**
+
 # Deletion
 ![architecture](https://postfiles.pstatic.net/MjAyMDExMDdfMjE1/MDAxNjA0NzIwMjY5NjU0.0GYKo8r8o_R4K7YzpKK7YGY69jh9PUe8iGBLXkdknEwg.hvQHOfBebsbS7CKbtDweJ1s5r5DdPNE_7wzCpZC1_iYg.PNG.qotjdrb6/image.png?type=w773)
 
+**원하는 곳의 데이터 삭제가능**
+
 # Retrieval
 ![architecture](https://postfiles.pstatic.net/MjAyMDExMDdfMTg3/MDAxNjA0NzIwMjk4ODI4.kcw3ewtkprMeAEiaAXwKMqqG97TkawcIcfzmCd2QzCIg.eej8J18hP0F5Doa3GRDZbxooSnHHanfF6LvPwPd-S4og.PNG.qotjdrb6/image.png?type=w773)
+
+**원하는 곳의 데이터 검색가능**
