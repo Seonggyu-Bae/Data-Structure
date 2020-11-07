@@ -19,3 +19,79 @@
 ![architecture](https://postfiles.pstatic.net/MjAyMDExMDdfMTg3/MDAxNjA0NzIwMjk4ODI4.kcw3ewtkprMeAEiaAXwKMqqG97TkawcIcfzmCd2QzCIg.eej8J18hP0F5Doa3GRDZbxooSnHHanfF6LvPwPd-S4og.PNG.qotjdrb6/image.png?type=w773)
 
 **원하는 곳의 데이터 검색가능**
+
+# 코드
+
+**리스트 생성**
+
+``sh
+LLIST* create_list() {
+	LLIST* list;
+	list = (LLIST*)malloc(sizeof(LLIST));
+
+	if(list) {
+		list->front = NULL;
+		list->rear  = NULL;
+		list->pos   = NULL;
+		list->count = 0;
+		return list;
+	} else {
+		return NULL;
+	}
+}
+``
+
+**원하는 곳에 데이터 삽입**
+``sh
+bool
+add_node_at (
+	LLIST*		 list,
+	unsigned int index,
+	void*		 data
+) {
+	if( (list->count) < index )
+		return false;
+
+	NODE* new_p = (NODE*)malloc(sizeof(NODE));
+	if(!new_p ){
+		printf("fail to malloc \n");
+		return false;
+	}
+	new_p->data_ptr	= data;
+	new_p->next	= NULL;
+
+	if(list->count==0) {
+		list->front = new_p;
+		list->rear  = new_p;
+		(list->count)++;
+		return true;
+	}	
+	
+	int iter_i=0;
+	if(index == 0) {
+		new_p->next = list->front;
+		list->front = new_p;
+		(list->count)++;
+		return true;
+	}
+	iter_i++;
+	list->pos = list->front; //start from front
+	while(iter_i != index) {
+		list->pos = list->pos->next;
+		iter_i++;
+	}
+	if(iter_i == list->count) {
+		list->pos->next = new_p;
+		list->rear = new_p;
+		(list->count)++;
+		return true;
+	}
+
+	else{
+		new_p->next = list->pos->next;
+		list->pos->next = new_p;
+		(list->count)++;
+		return true;
+	}
+}
+``
